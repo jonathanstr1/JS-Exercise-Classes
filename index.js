@@ -143,6 +143,25 @@ class Airplane {
           + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
   */
  class Instructor {
+    constructor(instru){
+      this.name = instru.name;
+      this.age = instru.age;
+      this.location = instru.location;
+      this.specialty = instru.specialty;
+      this.favLanguage = instru.favLanguage;
+      this.catchPhrase = instru.catchPhrase;
+
+    }
+    demo(subject){
+      return `Today we are learning about ${subject}`
+    }
+    grade(student, subject){
+      return `${student.name} receives a perfect score on ${subject}`
+
+    }
+    speak(){
+      return `Hello my name is ${this.name}, and I am from ${this.location}`
+    }
 
  }
   /*
@@ -160,8 +179,30 @@ class Airplane {
           + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
           + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
   */
- class Student {
-     
+ class Student extends Lambdasian {
+    constructor(stu){
+      this.name = stu.name;
+      this.age  = stu.age;
+      this.location = stu.location;
+      this.previousBackground = stu.previousBackground;
+      this.className = stu.className;
+      this.favSubjects = stu.favSubjects;
+    }
+    listSubjects() {
+      let subj = "Loving ";
+      for(let i = 0; i < this.favSubjects.length; i++){
+        subj += this.favSubjects[i] + ", " ;
+
+      }
+      return subj;
+    }
+    speak(){
+      return `Hello my name is ${this.name}, and I am from ${this.location}`
+    }
+    PRAssignment (subj) {
+      return `${this.name} has submitted a PR for ${subj}`
+    }
+
  }
   
   /*
